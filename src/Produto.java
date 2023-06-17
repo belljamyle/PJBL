@@ -44,6 +44,13 @@ public class Produto {
         this.quantidade = quantidade;
     }
 
+    public String getUnidade() {
+        return unidade;
+    }
+    public void setUnidade(String unidade) {
+        this.unidade = unidade;
+    }
+
     public double getValorUnitario() {
         return valorUnitario;
     }
