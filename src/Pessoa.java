@@ -1,23 +1,36 @@
 public abstract class Pessoa {
+    public int id;
     public String nome;
     public int cpf;
     public String logradouro;
     public String bairro;
     public String cidade;
+    public String estado;
     public String telefone;
     public String email;
 
-    abstract public void gravarPessoa();
-    public Pessoa(String nome, int cpf, String logradouro, String bairro, String cidade, String telefone, String email){
+    public abstract void gravarPessoa();
+
+    public Pessoa(int id, String nome, int cpf, String logradouro, String bairro, String cidade, String estado, String telefone, String email){
+        this.id = id;
         this.nome = nome;
         this.cpf = cpf;
         this.logradouro = logradouro;
         this.bairro = bairro;
         this.cidade = cidade;
+        this.estado = estado;
         this.telefone = telefone;
         this.email = email;
     }
     public Pessoa() {}
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;
@@ -52,6 +65,13 @@ public abstract class Pessoa {
     }
     public void setCidade(String cidade) {
         this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public String getTelefone() {

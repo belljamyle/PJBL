@@ -1,10 +1,23 @@
-public class Cliente extends Pessoa{
+import java.io.IOException;
+import java.io.Serializable;
+
+
+
+public class Cliente extends Pessoa implements Serializable {
     public void gravarPessoa(){}
-    public Cliente(String nome, int cpf, String logradouro, String bairro, String cidade, String telefone, String email){
-        super(nome, cpf, logradouro, bairro, cidade, telefone, email);
+
+    public Cliente(int id, String nome, int cpf, String logradouro, String bairro, String cidade, String estado, String telefone, String email){
+        super(id, nome, cpf, logradouro, bairro, cidade, estado, telefone, email);
     }
     public Cliente() {
         super();
+    }
+
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -40,6 +53,13 @@ public class Cliente extends Pessoa{
     }
     public void setCidade(String cidade) {
         this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public String getTelefone() {
