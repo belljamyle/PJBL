@@ -1,8 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-
 /**
  *
  * @author bell
@@ -85,6 +80,11 @@ public class Fornecedores extends javax.swing.JFrame {
                         "Title 1", "Title 2", "Title 3", "Title 4"
                 }
         ));
+        tbFornecedores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbFornecedoresMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tbFornecedores);
 
         btnCriar.setText("Criar");
@@ -217,6 +217,7 @@ public class Fornecedores extends javax.swing.JFrame {
         String estado = txtEstado.getText();
         String telefone = txtTelefone.getText();
         String email = txtEmail.getText();
+        int index = tbFornecedores.getSelectedRow();
 
         Fornecedor f = new Fornecedor(id, nome, cpf, logradouro, bairro, cidade, estado, telefone, email);
 
@@ -238,11 +239,45 @@ public class Fornecedores extends javax.swing.JFrame {
     }
 
     private void btnEditarMouseClicked(java.awt.event.MouseEvent evt) {
-        // TODO add your handling code here:
+        int id = Integer.parseInt(txtID.getText());
+        String nome = txtNome.getText();
+        int cpf = Integer.parseInt(txtCPF.getText());
+        String logradouro = txtLogradouro.getText();
+        String bairro = txtBairro.getText();
+        String cidade = txtCidade.getText();
+        String estado = txtEstado.getText();
+        String telefone = txtTelefone.getText();
+        String email = txtEmail.getText();
+        int index = tbFornecedores.getSelectedRow();
+
+        Fornecedor f = new Fornecedor(id, nome, cpf, logradouro, bairro, cidade, estado, telefone, email);
+
+        this.model.editarFornecedor(index, f);
+
+        LimparCampos();
     }
 
     private void btnDeletarMouseClicked(java.awt.event.MouseEvent evt) {
-        // TODO add your handling code here:
+        int index = tbFornecedores.getSelectedRow();
+
+        this.model.deletarFornecedor(index);
+
+        LimparCampos();
+    }
+
+    private void tbFornecedoresMouseClicked(java.awt.event.MouseEvent evt) {
+        int index = tbFornecedores.getSelectedRow();
+        Fornecedor f = this.model.returnFornecedor(index);
+
+        txtID.setText(String.valueOf(f.getId()));
+        txtNome.setText(f.getNome());
+        txtCPF.setText(String.valueOf(f.getCpf()));
+        txtLogradouro.setText(f.getLogradouro());
+        txtBairro.setText(f.getBairro());
+        txtCidade.setText(f.getCidade());
+        txtEstado.setText(f.getEstado());
+        txtTelefone.setText(f.getTelefone());
+        txtEmail.setText(f.getEmail());
     }
 
     /**

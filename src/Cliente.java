@@ -1,9 +1,4 @@
-import java.io.IOException;
-import java.io.Serializable;
-
-
-
-public class Cliente extends Pessoa implements Serializable {
+public class Cliente extends Pessoa {
     public void gravarPessoa(){}
 
     public Cliente(int id, String nome, int cpf, String logradouro, String bairro, String cidade, String estado, String telefone, String email){

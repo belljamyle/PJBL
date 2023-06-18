@@ -24,6 +24,11 @@ public class ClienteModel extends AbstractTableModel {
         this.fireTableDataChanged();
     }
 
+    public ArrayList<Cliente> listaClientes() {
+        ArrayList<Cliente> optCliente = clientes;
+        return optCliente;
+    }
+
     public int getRowCount() {
         return clientes.size();
     }

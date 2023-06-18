@@ -1,23 +1,23 @@
 public class ProdutoVenda {
-    private Venda venda;
+    private int idVenda;
     private Produto produto;
     private int quantidade;
     private double valor;
 
     public ProdutoVenda() {}
 
-    public ProdutoVenda(Venda venda, Produto produto, int quantidade, double valor) {
-        this.venda = venda;
+    public ProdutoVenda(int idVenda, Produto produto, int quantidade, double valor) {
+        this.idVenda = idVenda;
         this.produto = produto;
         this.quantidade = quantidade;
         this.valor = valor;
     }
 
-    public Venda getVenda() {
-        return venda;
+    public int getVenda() {
+        return idVenda;
     }
-    public void setVenda(Venda venda) {
-        this.venda = venda;
+    public void setVenda(int idVenda) {
+        this.idVenda = idVenda;
     }
 
     public Produto getProduto() {

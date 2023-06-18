@@ -4,9 +4,9 @@ public class Venda {
     private Cliente cliente;
     private int id;
     private double valorTotal;
-    private HashMap<String, ProdutoVenda> ProdutoVenda;
+    private HashMap<Integer, ProdutoVenda> ProdutoVenda;
     public Venda() {}
-    public Venda(Cliente cliente, int id, double valorTotal, HashMap<String, ProdutoVenda> ProdutoVenda) {
+    public Venda(Cliente cliente, int id, double valorTotal, HashMap<Integer, ProdutoVenda> ProdutoVenda) {
         this.cliente = cliente;
         this.id = id;
         this.valorTotal = valorTotal;
@@ -34,10 +34,10 @@ public class Venda {
         this.valorTotal = valorTotal;
     }
 
-    public HashMap<String, ProdutoVenda> getProdutoVenda() {
+    public HashMap<Integer, ProdutoVenda> getProdutoVenda() {
         return ProdutoVenda;
     }
-    public void setProdutoVenda(HashMap<String, ProdutoVenda> produtoVenda) {
+    public void setProdutoVenda(HashMap<Integer, ProdutoVenda> produtoVenda) {
         ProdutoVenda = produtoVenda;
     }
 }

@@ -10,6 +10,20 @@ public class FornecedorModel extends AbstractTableModel {
         this.fireTableDataChanged();
     }
 
+    public Fornecedor returnFornecedor(int index) {
+        return fornecedores.get(index);
+    }
+
+    public void editarFornecedor(int index, Fornecedor f) {
+        fornecedores.set(index, f);
+        this.fireTableDataChanged();
+    }
+
+    public void deletarFornecedor(int index) {
+        fornecedores.remove(index);
+        this.fireTableDataChanged();
+    }
+
     public int getRowCount() {
         return fornecedores.size();
     }
