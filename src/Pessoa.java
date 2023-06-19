@@ -9,7 +9,7 @@ public abstract class Pessoa {
     public String telefone;
     public String email;
 
-    public abstract void gravarPessoa();
+    public void gravarPessoa() {};
 
     public Pessoa(int id, String nome, int cpf, String logradouro, String bairro, String cidade, String estado, String telefone, String email){
         this.id = id;

@@ -1,9 +1,17 @@
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class ClienteModel extends AbstractTableModel {
-    ArrayList<Cliente> clientes = new ArrayList<>();
+    static ArrayList<Cliente> clientes = new ArrayList<>();
     String[] colunas = {"ID", "Nome", "CPF", "Logradouro", "Bairro", "Cidade", "Estado", "Telefone", "E-Mail"};
+
+    public ArrayList<Cliente> listaProdutos() {
+        ArrayList<Cliente> optCliente = clientes;
+        return optCliente;
+    }
 
     public void cadastrarCliente(Cliente c) {
         clientes.add(c);
@@ -24,6 +32,16 @@ public class ClienteModel extends AbstractTableModel {
         this.fireTableDataChanged();
     }
 
+<<<<<<< Updated upstream
+=======
+    public ArrayList<Cliente> listaClientes() {
+        ArrayList<Cliente> optCliente = clientes;
+        return optCliente;
+    }
+
+
+
+>>>>>>> Stashed changes
     public int getRowCount() {
         return clientes.size();
     }

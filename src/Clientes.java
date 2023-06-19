@@ -1,3 +1,6 @@
+import javax.swing.*;
+import java.util.ArrayList;
+
 /**
  *
  * @author bell
@@ -45,6 +48,7 @@ public class Clientes extends javax.swing.JFrame {
         btnCriar = new javax.swing.JButton();
         btnDeletar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
+        btnVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -110,54 +114,66 @@ public class Clientes extends javax.swing.JFrame {
             }
         });
 
+        btnVoltar.setText("Voltar");
+        btnVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnVoltarMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jLabel10)
-                                                        .addComponent(jLabel9)
-                                                        .addComponent(jLabel8)
-                                                        .addComponent(jLabel7)
-                                                        .addComponent(jLabel6)
-                                                        .addComponent(jLabel5)
-                                                        .addComponent(jLabel4)
-                                                        .addComponent(jLabel3)
-                                                        .addComponent(jLabel2))
-                                                .addGap(78, 78, 78)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(txtID)
-                                                        .addComponent(txtNome)
-                                                        .addComponent(txtCPF)
-                                                        .addComponent(txtLogradouro)
-                                                        .addComponent(txtBairro)
-                                                        .addComponent(txtCidade)
-                                                        .addComponent(txtEstado)
-                                                        .addComponent(txtTelefone)
-                                                        .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addComponent(btnCriar)
-                                                .addGap(96, 96, 96)
-                                                .addComponent(btnEditar)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
-                                                .addComponent(btnDeletar)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(36, 36, 36))
                         .addGroup(layout.createSequentialGroup()
-                                .addGap(321, 321, 321)
-                                .addComponent(jLabel1)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(15, 15, 15)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(btnVoltar)
+                                                .addGap(228, 228, 228)
+                                                .addComponent(jLabel1)
+                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(jLabel10)
+                                                                        .addComponent(jLabel9)
+                                                                        .addComponent(jLabel8)
+                                                                        .addComponent(jLabel7)
+                                                                        .addComponent(jLabel6)
+                                                                        .addComponent(jLabel5)
+                                                                        .addComponent(jLabel4)
+                                                                        .addComponent(jLabel3)
+                                                                        .addComponent(jLabel2))
+                                                                .addGap(78, 78, 78)
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                                        .addComponent(txtID)
+                                                                        .addComponent(txtNome)
+                                                                        .addComponent(txtCPF)
+                                                                        .addComponent(txtLogradouro)
+                                                                        .addComponent(txtBairro)
+                                                                        .addComponent(txtCidade)
+                                                                        .addComponent(txtEstado)
+                                                                        .addComponent(txtTelefone)
+                                                                        .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(btnCriar)
+                                                                .addGap(96, 96, 96)
+                                                                .addComponent(btnEditar)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
+                                                                .addComponent(btnDeletar)))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(36, 36, 36))))
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addGap(38, 38, 38)
-                                .addComponent(jLabel1)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel1)
+                                        .addComponent(btnVoltar))
                                 .addGap(31, 31, 31)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addGroup(layout.createSequentialGroup()
@@ -209,6 +225,8 @@ public class Clientes extends javax.swing.JFrame {
     }// </editor-fold>
 
     private void btnCriarMouseClicked(java.awt.event.MouseEvent evt) {
+        String txtid = txtID.getText();
+        String txtcpf = txtCPF.getText();
         int id = Integer.parseInt(txtID.getText());
         String nome = txtNome.getText();
         int cpf = Integer.parseInt(txtCPF.getText());
@@ -219,11 +237,30 @@ public class Clientes extends javax.swing.JFrame {
         String telefone = txtTelefone.getText();
         String email = txtEmail.getText();
 
-        Cliente c = new Cliente(id, nome, cpf, logradouro, bairro, cidade, estado, telefone, email);
+        if(nome.length() == 0 || logradouro.length() == 0 || bairro.length() == 0 || cidade.length() == 0 ||
+                estado.length() == 0 || telefone.length() == 0 || email.length() == 0 || txtid.length() == 0 || txtcpf.length() == 0) {
+            JOptionPane.showMessageDialog(this, "Campos não preenchidos!");
+        } else {
+            if(verificarId(id)) {
+                Cliente c = new Cliente(id, nome, cpf, logradouro, bairro, cidade, estado, telefone, email);
 
-        this.model.cadastrarCliente(c);
+                this.model.cadastrarCliente(c);
 
-        LimparCampos();
+                LimparCampos();
+            } else {
+                JOptionPane.showMessageDialog(this, "ID já utilizada!");
+            }
+        }
+    }
+
+    public boolean verificarId(int id) {
+        ArrayList<Cliente> clientes = model.listaProdutos();
+        for(Cliente c: clientes) {
+            if (c.getId() == id) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public void LimparCampos() {
@@ -239,6 +276,8 @@ public class Clientes extends javax.swing.JFrame {
     }
 
     private void btnEditarMouseClicked(java.awt.event.MouseEvent evt) {
+        String txtid = txtID.getText();
+        String txtcpf = txtCPF.getText();
         int id = Integer.parseInt(txtID.getText());
         String nome = txtNome.getText();
         int cpf = Integer.parseInt(txtCPF.getText());
@@ -250,19 +289,32 @@ public class Clientes extends javax.swing.JFrame {
         String email = txtEmail.getText();
         int index = tbClientes.getSelectedRow();
 
-        Cliente c = new Cliente(id, nome, cpf, logradouro, bairro, cidade, estado, telefone, email);
+        if(nome.length() == 0 || logradouro.length() == 0 || bairro.length() == 0 || cidade.length() == 0 ||
+                estado.length() == 0 || telefone.length() == 0 || email.length() == 0 || txtid.length() == 0 || txtcpf.length() == 0) {
+            JOptionPane.showMessageDialog(this, "Campos não preenchidos!");
+        } else {
+            if(verificarId(id)) {
+                JOptionPane.showMessageDialog(this, "ID não existente!");
+            } else {
+                Cliente c = new Cliente(id, nome, cpf, logradouro, bairro, cidade, estado, telefone, email);
 
-        this.model.editarCliente(index, c);
+                this.model.editarCliente(index, c);
 
-        LimparCampos();
+                LimparCampos();
+            }
+        }
     }
+
+
 
     private void btnDeletarMouseClicked(java.awt.event.MouseEvent evt) {
         int index = tbClientes.getSelectedRow();
 
-        this.model.deletarCliente(index);
+        if(JOptionPane.showConfirmDialog(this, "Deseja realmente remover o cliente?", "Deletar", JOptionPane.YES_NO_OPTION) == 0) {
+            this.model.deletarCliente(index);
 
-        LimparCampos();
+            LimparCampos();
+        }
     }
 
     private void tbClientesMouseClicked(java.awt.event.MouseEvent evt) {
@@ -278,6 +330,12 @@ public class Clientes extends javax.swing.JFrame {
         txtEstado.setText(c.getEstado());
         txtTelefone.setText(c.getTelefone());
         txtEmail.setText(c.getEmail());
+    }
+
+    private void btnVoltarMouseClicked(java.awt.event.MouseEvent evt) {
+        Menu m = new Menu();
+        this.dispose();
+        m.setVisible(true);
     }
 
     /**
@@ -313,12 +371,15 @@ public class Clientes extends javax.swing.JFrame {
                 new Clientes().setVisible(true);
             }
         });
+
+        String nome_arquivo = args[0];
     }
 
     // Variables declaration - do not modify
     private javax.swing.JButton btnCriar;
     private javax.swing.JButton btnDeletar;
     private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnVoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

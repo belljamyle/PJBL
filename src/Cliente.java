@@ -1,10 +1,42 @@
 import java.io.IOException;
 import java.io.Serializable;
 
+<<<<<<< Updated upstream
 
 
 public class Cliente extends Pessoa implements Serializable {
     public void gravarPessoa(){}
+=======
+public class Cliente extends Pessoa implements Serializable {
+
+    public void gravarPessoa(Cliente c){
+        try {
+            serializador.gravar(c.getCpf() + ".cliente", c);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void recuperarPessoa(Cliente c, String nome_arquivo) {
+        try {
+            Cliente cliente = (Cliente) serializador.ler(nome_arquivo);
+        } catch (IOException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void editarPessoa(String nome_arquivo) {
+        try {
+            Cliente cliente = (Cliente) serializador.ler(nome_arquivo);
+
+            serializador.gravar(nome_arquivo, cliente);
+
+        } catch (IOException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+>>>>>>> Stashed changes
 
     public Cliente(int id, String nome, int cpf, String logradouro, String bairro, String cidade, String estado, String telefone, String email){
         super(id, nome, cpf, logradouro, bairro, cidade, estado, telefone, email);
